@@ -419,9 +419,17 @@ void loop() {
                    
              
                 if (bitRead(acti_message,MESS_1)&&indexmessage==1){
-                  ligne1=ligne1message1;
-                  ligne2=ligne2message1;
-                  ligne3=ligne3message1;
+                  if(ligne1message1=="$date"){ligne1=NTP.getDateStr();}
+                  else if (ligne1message1=="$time"){ligne1=NTP.getTimeStr();}
+                  else {ligne1=ligne1message1;}
+                  if(ligne2message1=="$date"){ligne2=NTP.getDateStr();}
+                  else if (ligne2message1=="$time"){ligne2=NTP.getTimeStr();}
+                  else {ligne2=ligne2message1;}
+                  if(ligne3message1=="$date"){ligne3=NTP.getDateStr();}
+                  else if (ligne3message1=="$time"){ligne3=NTP.getTimeStr();}
+                  else if (ligne3message1=="$time$date"){ligne3=NTP.getTimeStr()+' '+NTP.getDateStr();}
+                  else if (ligne3message1=="$date$time"){ligne3=NTP.getDateStr()+' '+NTP.getTimeStr();}
+                  else {ligne3=ligne3message1;}
                   couleur1=ligne1couleur1;
                   couleur2=ligne2couleur1;
                   couleur3=ligne3couleur1;
