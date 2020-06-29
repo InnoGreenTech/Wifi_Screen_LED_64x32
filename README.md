@@ -1,4 +1,4 @@
-Wifi Matrix screen led 32x>64  connected
+Wifi Matrix screen led 32x64  connected
 ====================
 
 Description:
